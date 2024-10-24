@@ -1,0 +1,29 @@
+pour commencer assurer vous devez avoir node.js(npm) et phpMyAdmin (pour les données) moi pour démarrer j'ai utilisé XAMMP
+créer ensuite la base de donnée 1 appele restapi et la base de donnés 2 appele restapi2
+puis dans chaque base créer une table pour stocker les items et la category aussi
+Clonez ce dépôt ou téléchargez-le sous forme de fichier ZIP et extrayez-le.
+Accédez au dossier du projet dans votre terminal.
+dans un terminal pour installer dependances on utilise npm install
+Assurez-vous que MySQL est en cours d'exécution sur localhost, port 3306, et que votre utilisateur MySQL est configuré correctement (ici, root est utilisé).
+Serveur 1 (Port 3000)
+Ce serveur se connecte à la base de données restapi et restapi2.
+Pour démarrer ce serveur, utilisez la commande suivante dans le terminal
+node server1.js
+Vous devriez voir un message confirmant que le serveur est en cours d'exécution sur le port 3000 et connecté aux bases de données.
+
+Serveur 2 (Port 3001)
+Ce serveur se connecte uniquement à la base de données restapi2.
+Pour démarrer ce serveur, utilisez la commande suivante dans le terminal
+node server2.js
+pour interagir vous utiliserez postman 
+pour le serveur 1 ce sera le (port 3000)
+le get ,le put et le delete n'ont pas besoin de JSON pour fonctionner 
+pour le post vous rentrez sur body raw et ce que vous ecrirez dans le JSON doivent etre name,price,descrption 
+exemple 
+{
+"name":"sprite",
+"price":45,
+"description":"fgcgf"
+}
+pour tester juste c'est un exemple 
+pour le serveur 2 v'est la mèmè chose que pour le serveur 1 
