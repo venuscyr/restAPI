@@ -72,7 +72,7 @@ app.post('/createItem', (req, res) => {
     const { name, price, description} = req.body;
     const sql = 'INSERT INTO items (name, price, description) VALUES(?,?,?)';
     const values = [name, price, description];
-    dataBase.query(sql, values, (err, result) => {
+    dataBase1.query(sql, values, (err, result) => {
        if (err) {
       return res.status(500).send(err.message);
        }
@@ -89,7 +89,7 @@ app.post('/createItem', (req, res) => {
        const sql = 'UPDATE items SET name = ?, price = ?, description = ? WHERE id = ?';
        const values = [name, price, description, id];
    
-       dataBase.query(sql, values, (err, result) => {
+       dataBase1.query(sql, values, (err, result) => {
            if (err) {
                return res.status(500).json({ error: err.message });  
            }
@@ -109,7 +109,7 @@ app.post('/createItem', (req, res) => {
        const {id} = req.params; 
    
        const sql = 'DELETE FROM items WHERE id = ?';
-       dataBase.query(sql, [id], (err, result) => {
+       dataBase1.query(sql, [id], (err, result) => {
    
            if (err) {
                return res.status(500).json(err);
